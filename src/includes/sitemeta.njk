@@ -1,0 +1,61 @@
+{%- set isPost= layout == 'post' -%}
+
+{%- if isPost -%}
+  {# Auto-Generate a Description for Posts  #}
+  {%- set currentPage = collections.all | currentPage(page) -%}
+  {%- set autoDescription = currentPage.templateContent | excerpt | safe | striptags -%}
+{% endif %}
+<title>{%- if title -%}{{ title }} – {{ site.title }}{%- else -%}{{ site.title }} – {{ site.description }}{%- endif -%}</title>
+{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(site.url) }}{%- endset -%}
+<meta name="description" content="{{ excerpt or autoDescription or site.description }}">
+
+{# Open Graph #}
+<meta property="og:title" content="{%- if title -%}{{ title }} – {{ site.title }}{%- else -%}{{ site.title }} – {{ site.description }}{%- endif -%}">
+<meta property="og:description" content="{{ excerpt or autoDescription or site.description }}">
+<meta property="og:url" content="{{ absolutePageUrl }}">
+<meta property="og:image" content="{%- if cover -%}{{ cover | url }}{%- else -%}{{ site.coverjpg | url | absoluteUrl(site.url) }}{%- endif -%}">
+<meta property="og:locale" content="{{ site.locale }}">
+
+{%- if isPost -%}
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="{{ page.date.toISOString() }}">
+<meta property="article:author" content="https://www.itsmejuha.co/about/">
+
+{%- elif page.fileSlug === 'about' -%}
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Juha Liikala">
+<meta property="og:url" content="https://www.itsmejuha.co/about/">
+<meta property="og:image" content="{{ site.url }}{{ author.authoravatarlarge }}">
+<meta property="profile:first_name" content="Juha">
+<meta property="profile:last_name" content="Liikala">
+
+{%- else -%}
+<meta name="og:type" content="website">
+{%- endif -%}
+
+{# General #}
+<meta name="author" content="{{ author.name }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="{{ site.locale }}">
+
+{# JSON LD #}
+<script type="application/ld+json">
+  {
+    "name":"{{ site.title }}",
+    "description":"{{ site.description }}",
+    "author": {
+      "@type":"Person",
+      "name":"{{ author.name }}"
+    },
+    "@type":"WebSite",
+    "url":"{{ site.url }}",
+    "image":"{{ site.coverjpg | url | absoluteUrl(site.url) }}",
+    "headline":"{{ site.title }}",
+    "sameAs":[
+      "{{ author.social.threads.url }}",
+      "{{ author.social.instagram.url }}",
+      "{{ author.social.linkedin.url }}"
+    ],
+    "@context":"http://schema.org"
+  }
+</script>

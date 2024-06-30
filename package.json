@@ -1,0 +1,25 @@
+{
+  "name": "juhaliikala.dev",
+  "version": "1.0.0",
+  "description": "juhaliikala.dev site in english and finnish",
+  "scripts": {
+    "build": "npx @11ty/eleventy --input=src",
+    "start": "npx @11ty/eleventy --input=src --serve",
+    "watch": "npx @11ty/eleventy --input=src --watch",
+    "debug": "DEBUG=* npx @11ty/eleventy --input=src"
+  },
+  "keywords": [],
+  "author": "Juha Liikala",
+  "license": "MIT",
+  "homepage": "https://github.com/jliikala/juhaliikala.dev#readme",
+  "bugs": {
+    "url": "https://github.com/jliikala/juhaliikala.dev/issues"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "markdown-it": "^14.1.0"
+  },
+  "devDependencies": {
+    "luxon": "^3.4.4"
+  }
+}

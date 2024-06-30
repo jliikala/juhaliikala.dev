@@ -1,0 +1,22 @@
+{
+  "title": "Juha Liikala",
+  "description": "Moi! Olen Juha Liikala, web devaaja Oulusta.",
+  "url": "https://juhaliikala.dev",
+  "domain": "juhaliikala.dev",
+  "baseUrl": "/",
+  "langFi": "fi",
+  "localeFi": "fi_FI",
+  "langEn": "en",
+  "localeEn": "en-US",
+  "cover": "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2048&q=80",
+  "coverjpg": "/assets/images/cover.jpg",
+  "icon192": "icon-192.png",
+  "icon512": "icon-512.png",
+  "author": {
+    "handle": "@juhaliikala",
+    "name": "Juha Liikala",
+    "url": "https://juhaliikala.dev/",
+    "email": "moikka@juhaliikala.dev",
+    "avatar": "/assets/images/author-avatar.jpg"
+  }
+}
