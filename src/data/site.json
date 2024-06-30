@@ -1,8 +1,8 @@
 {
-  "title-fi": "Moi! Olen Juha Liikala",
-  "title-en": "Hi! I'm Juha Liikalaa",
-  "description-fi": "Web devaaja ja pikselinikkari Oulusta.",
-  "description-en": "Web developer and pixel tweaker from Oulu, Finland.",
+  "titleFi": "Moi! Olen Juha Liikala",
+  "titleEn": "Hi! I'm Juha Liikalaa",
+  "descriptionFi": "Web devaaja ja pikselinikkari Oulusta.",
+  "descriptionEn": "Web developer and pixel tweaker from Oulu, Finland.",
   "url": "https://juhaliikala.dev",
   "domain": "juhaliikala.dev",
   "baseUrl": "/",

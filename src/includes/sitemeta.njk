@@ -3,20 +3,20 @@
 <title>{%- if title -%}{{ title }} – {{ site.title }}{%- else -%}{{ site.title }} – {{ site.description }}{%- endif -%}</title>
 {%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(site.url) }}{%- endset -%}
 {%- if isFi -%}
-<meta name="description" content="{{ autoDescription or site.description-fi }}">
+<meta name="description" content="{{ autoDescription or site.descriptionFi }}">
 {%- else -%}
-<meta name="description" content="{{ autoDescription or site.description-en }}">
+<meta name="description" content="{{ autoDescription or site.descriptionEn }}">
 {%- endif -%}
 
 {# Open Graph #}
 {%- if isFi -%}
-<meta property="og:title" content="{%- if title -%}{{ title }} – {{ site.title-fi }}{%- else -%}{{ site.title-fu }} – {{ site.description-fi }}{%- endif -%}">
-<meta property="og:description" content="{{ autoDescription or site.description-fi }}">
-<meta property="og:locale" content="{{ site.locale-fi }}">
+<meta property="og:title" content="{%- if title -%}{{ title }} – {{ site.titleFi }}{%- else -%}{{ site.title-fu }} – {{ site.descriptionFi }}{%- endif -%}">
+<meta property="og:description" content="{{ autoDescription or site.descriptionFi }}">
+<meta property="og:locale" content="{{ site.localeFi }}">
 {%- else -%}
 <meta property="og:title" content="{%- if title -%}{{ title }} – {{ site.title }}{%- else -%}{{ site.title }} – {{ site.description }}{%- endif -%}">
 <meta property="og:description" content="{{ excerpt or autoDescription or site.description }}">
-<meta property="og:locale" content="{{ site.locale-en }}">
+<meta property="og:locale" content="{{ site.localeEn }}">
 {%- endif -%}
 <meta property="og:url" content="{{ absolutePageUrl }}">
 <meta property="og:image" content="{%- if cover -%}{{ cover | url }}{%- else -%}{{ site.coverjpg | url | absoluteUrl(site.url) }}{%- endif -%}">
@@ -37,8 +37,8 @@
 {%- if isFi -%}
 <script type="application/ld+json">
   {
-    "name":"{{ site.title-fi }}",
-    "description":"{{ site.description-fi }}",
+    "name":"{{ site.titleFi }}",
+    "description":"{{ site.descriptionFi }}",
     "author": {
       "@type":"Person",
       "name":"{{ author.name }}"
@@ -46,7 +46,7 @@
     "@type":"WebSite",
     "url":"{{ site.url }}",
     "image":"{{ site.coverjpg | url | absoluteUrl(site.url) }}",
-    "headline":"{{ site.title-fi }}",
+    "headline":"{{ site.titleFi }}",
     "sameAs":[
       "{{ author.social.linkedin.url }}",
        "{{ author.social.github.url }}",
@@ -57,8 +57,8 @@
 {%- else -%}
 <script type="application/ld+json">
   {
-    "name":"{{ site.title-en }}",
-    "description":"{{ site.description-en }}",
+    "name":"{{ site.titleEn }}",
+    "description":"{{ site.descriptionEn }}",
     "author": {
       "@type":"Person",
       "name":"{{ author.name }}"
@@ -66,7 +66,7 @@
     "@type":"WebSite",
     "url":"{{ site.url }}",
     "image":"{{ site.coverjpg | url | absoluteUrl(site.url) }}",
-    "headline":"{{ site.title-en }}",
+    "headline":"{{ site.titleEn }}",
     "sameAs":[
       "{{ author.social.linkedin.url }}",
        "{{ author.social.github.url }}",
