@@ -10,12 +10,12 @@
 
 {# Open Graph #}
 {%- if isFi -%}
-<meta property="og:title" content="{%- if title -%}{{ title }} – {{ site.titleFi }}{%- else -%}{{ site.title-fu }} – {{ site.descriptionFi }}{%- endif -%}">
+<meta property="og:title" content="{%- if title -%}{{ title }} – {{ site.titleFi }}{%- else -%}{{ site.titleFi }} – {{ site.descriptionFi }}{%- endif -%}">
 <meta property="og:description" content="{{ autoDescription or site.descriptionFi }}">
 <meta property="og:locale" content="{{ site.localeFi }}">
 {%- else -%}
-<meta property="og:title" content="{%- if title -%}{{ title }} – {{ site.title }}{%- else -%}{{ site.title }} – {{ site.description }}{%- endif -%}">
-<meta property="og:description" content="{{ excerpt or autoDescription or site.description }}">
+<meta property="og:title" content="{%- if title -%}{{ title }} – {{ site.titleEn }}{%- else -%}{{ site.titleEn }} – {{ site.descriptionEn }}{%- endif -%}">
+<meta property="og:description" content="{{ autoDescription or site.descriptionEn }}">
 <meta property="og:locale" content="{{ site.localeEn }}">
 {%- endif -%}
 <meta property="og:url" content="{{ absolutePageUrl }}">
