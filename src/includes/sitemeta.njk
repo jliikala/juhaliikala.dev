@@ -1,37 +1,32 @@
-{%- set isPost= layout == 'post' -%}
+{%- set isFi= layout == 'home-fi' -%}
 
-{%- if isPost -%}
-  {# Auto-Generate a Description for Posts  #}
-  {%- set currentPage = collections.all | currentPage(page) -%}
-  {%- set autoDescription = currentPage.templateContent | excerpt | safe | striptags -%}
-{% endif %}
 <title>{%- if title -%}{{ title }} – {{ site.title }}{%- else -%}{{ site.title }} – {{ site.description }}{%- endif -%}</title>
 {%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(site.url) }}{%- endset -%}
-<meta name="description" content="{{ excerpt or autoDescription or site.description }}">
+{%- if isFi -%}
+<meta name="description" content="{{ autoDescription or site.description-fi }}">
+{%- else -%}
+<meta name="description" content="{{ autoDescription or site.description-en }}">
+{%- endif -%}
 
 {# Open Graph #}
+{%- if isFi -%}
+<meta property="og:title" content="{%- if title -%}{{ title }} – {{ site.title-fi }}{%- else -%}{{ site.title-fu }} – {{ site.description-fi }}{%- endif -%}">
+<meta property="og:description" content="{{ autoDescription or site.description-fi }}">
+<meta property="og:locale" content="{{ site.locale-fi }}">
+{%- else -%}
 <meta property="og:title" content="{%- if title -%}{{ title }} – {{ site.title }}{%- else -%}{{ site.title }} – {{ site.description }}{%- endif -%}">
 <meta property="og:description" content="{{ excerpt or autoDescription or site.description }}">
+<meta property="og:locale" content="{{ site.locale-en }}">
+{%- endif -%}
 <meta property="og:url" content="{{ absolutePageUrl }}">
 <meta property="og:image" content="{%- if cover -%}{{ cover | url }}{%- else -%}{{ site.coverjpg | url | absoluteUrl(site.url) }}{%- endif -%}">
-<meta property="og:locale" content="{{ site.locale }}">
 
-{%- if isPost -%}
-<meta property="og:type" content="article">
-<meta property="article:published_time" content="{{ page.date.toISOString() }}">
-<meta property="article:author" content="https://www.itsmejuha.co/about/">
-
-{%- elif page.fileSlug === 'about' -%}
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Juha Liikala">
-<meta property="og:url" content="https://www.itsmejuha.co/about/">
+<meta property="og:url" content="https://juhaliikala.dev/">
 <meta property="og:image" content="{{ site.url }}{{ author.authoravatarlarge }}">
 <meta property="profile:first_name" content="Juha">
 <meta property="profile:last_name" content="Liikala">
-
-{%- else -%}
-<meta name="og:type" content="website">
-{%- endif -%}
 
 {# General #}
 <meta name="author" content="{{ author.name }}">
@@ -39,10 +34,11 @@
 <meta property="og:locale" content="{{ site.locale }}">
 
 {# JSON LD #}
+{%- if isFi -%}
 <script type="application/ld+json">
   {
-    "name":"{{ site.title }}",
-    "description":"{{ site.description }}",
+    "name":"{{ site.title-fi }}",
+    "description":"{{ site.description-fi }}",
     "author": {
       "@type":"Person",
       "name":"{{ author.name }}"
@@ -50,12 +46,32 @@
     "@type":"WebSite",
     "url":"{{ site.url }}",
     "image":"{{ site.coverjpg | url | absoluteUrl(site.url) }}",
-    "headline":"{{ site.title }}",
+    "headline":"{{ site.title-fi }}",
     "sameAs":[
-      "{{ author.social.threads.url }}",
-      "{{ author.social.instagram.url }}",
-      "{{ author.social.linkedin.url }}"
+      "{{ author.social.linkedin.url }}",
+       "{{ author.social.github.url }}",
     ],
     "@context":"http://schema.org"
   }
 </script>
+{%- else -%}
+<script type="application/ld+json">
+  {
+    "name":"{{ site.title-en }}",
+    "description":"{{ site.description-en }}",
+    "author": {
+      "@type":"Person",
+      "name":"{{ author.name }}"
+    },
+    "@type":"WebSite",
+    "url":"{{ site.url }}",
+    "image":"{{ site.coverjpg | url | absoluteUrl(site.url) }}",
+    "headline":"{{ site.title-en }}",
+    "sameAs":[
+      "{{ author.social.linkedin.url }}",
+       "{{ author.social.github.url }}",
+    ],
+    "@context":"http://schema.org"
+  }
+</script>
+{%- endif -%}

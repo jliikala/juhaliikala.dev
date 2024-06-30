@@ -1,6 +1,6 @@
 {
   "name": "Juha Liikala",
-  "email": "hi@itsmejuha.co",
+  "email": "hei@juhaliikala.dev",
   "avatar40": "/assets/images/avatar40.webp",
   "avatar80": "/assets/images/avatar80.webp",
   "avatar160": "/assets/images/avatar160.webp",
@@ -12,29 +12,7 @@
   "authoravatarlarge": "/assets/images/avatar400.webp",
   "authoravatarjpeg": "/assets/images/avatar200.jpg",
   "cover": "/assets/images/cover.webp",
-  "sites": {
-    "personalblog": {
-      "url": "https://www.itsmejuha.co"
-    },
-    "newsletter": {
-      "url": "http://eepurl.com/dK5O1I"
-    },
-    "strippedbarestudios": {
-      "url": "https://www.stripped.co"
-    },
-    "nomadcouch": {
-      "url": "https://nomadcouch.com"
-    }
-  },
   "social": {
-    "threads": {
-      "name": "nomadcouch",
-      "url": "https://www.threads.net/@nomadcouch"
-    },
-    "instagram": {
-      "name": "nomadcouch",
-      "url": "https://www.instagram.com/nomadcouch"
-    },
     "linkedin": {
       "name": "juhaliikala",
       "url": "https://fi.linkedin.com/in/juhaliikala"
@@ -42,50 +20,6 @@
     "github": {
       "name": "jliikala",
       "url": "https://github.com/jliikala"
-    },
-    "youtube": {
-      "name": "jliikala",
-      "url": "https://www.youtube.com/user/jliikala"
-    },
-    "medium": {
-      "name": "juhaliikala",
-      "url": "https://medium.com/@juhaliikala"
-    },
-    "producthunt": {
-      "name": "juhaliikala",
-      "url": "https://www.producthunt.com/@juhaliikala"
-    },
-    "unsplash": {
-      "name": "juhaliikala",
-      "url": "https://unsplash.com/@juhaliikala"
-    },
-    "500px": {
-      "name": "juhaliikala",
-      "url": "https://500px.com/juhaliikala"
-    },
-    "spotify": {
-      "name": "jliikala",
-      "url": "https://open.spotify.com/user/jliikala"
-    },
-    "buymeacoffee": {
-      "name": "juhaliikala",
-      "url": "https://www.buymeacoffee.com/juhaliikala"
-    },
-    "trakt": {
-      "name": "juhaliikala",
-      "url": "https://trakt.tv/users/juhaliikala"
-    },
-    "pinterest": {
-      "name": "juhaliikala",
-      "url": "https://www.pinterest.com/juhaliikala"
-    },
-    "vsco": {
-      "name": "vsco",
-      "url": "https://vsco.co/nomadcouch"
-    },
-    "stackoverflow": {
-      "name": "stackoverflow",
-      "url": "https://stackoverflow.com/users/4168866/juha-liikala"
     }
   }
 }

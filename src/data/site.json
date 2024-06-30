@@ -1,6 +1,8 @@
 {
-  "title": "Juha Liikala",
-  "description": "Moi! Olen Juha Liikala, web devaaja Oulusta.",
+  "title-fi": "Moi! Olen Juha Liikala",
+  "title-en": "Hi! I'm Juha Liikalaa",
+  "description-fi": "Web devaaja ja pikselinikkari Oulusta.",
+  "description-en": "Web developer and pixel tweaker from Oulu, Finland.",
   "url": "https://juhaliikala.dev",
   "domain": "juhaliikala.dev",
   "baseUrl": "/",
@@ -16,7 +18,7 @@
     "handle": "@juhaliikala",
     "name": "Juha Liikala",
     "url": "https://juhaliikala.dev/",
-    "email": "moikka@juhaliikala.dev",
+    "email": "hei@juhaliikala.dev",
     "avatar": "/assets/images/author-avatar.jpg"
   }
 }
